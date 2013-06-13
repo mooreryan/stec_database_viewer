@@ -1,4 +1,4 @@
-Pickle BDB Configurator
+Happy Moo BDB Configurator
 =======================
 
 todo
