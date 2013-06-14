@@ -1,0 +1,60 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #21B6A8;
+  margin: 0;
+  padding: 0;
+}
+
+div#header-container {
+  width: 100%;
+  height: 3em;
+  left: 0;
+  top: 0;
+  background-color: #CBFFFA;
+  position: relative;
+
+  div#header-content-bar {
+    line-height: 3em;
+  }
+}
+
+ul#header-navigation-items { 
+  list-style-type: none; 
+  margin: 0;
+  padding: 0;
+  text-align: right;
+
+  li { 
+    display: inline; 
+
+    a { 
+      text-decoration: none; 
+      padding: .2em 1em;
+      color: #7F3D17;
+      font-weight: bold;
+      letter-spacing: -1px;
+
+      &:hover {  }
+    }
+  }
+}
+
+h1 {
+  text-align:center;
+  color: #7F3D17;
+}
+
+div#cow-pic {
+  width: 398px;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: mintcream;
+}
+
+footer p { 
+  padding-left: 25px;
+  color: #21B6A8;
+  font-size: .75em;
+  letter-spacing: -.5px;
+}

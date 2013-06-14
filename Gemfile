@@ -27,8 +27,10 @@ end
 # end
 
 # for MySQL at any all stages
-gem 'mysql2'
-
+group :mysql do
+  gem 'mysql2'
+  gem 'activerecord-mysql-adapter'
+end
 
 ############################################################
 ############################################################

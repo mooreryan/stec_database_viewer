@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Happy Moo BDBC | <%= yield(:title) %></title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
 </head>
 <body>
-  <header>
-    <div id="header-content">
-      <ul id="header-navigation">
-	<li>Home</li>
-	<li>About</li>
-	<li>View</li>
-	<li>Add</li>
-	<li>Edit</li>
-	<li>Contact</li>
-      </ul>
-    </div>
-  </header>
+  <%= render 'layouts/header' %>
+
   <%= yield %>
 
+  <%= render 'layouts/footer' %>
 </body>
 </html>
