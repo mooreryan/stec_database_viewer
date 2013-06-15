@@ -2,16 +2,16 @@ development:
   adapter: postgresql
   encoding: utf8
   database: stec_development
-  username: stec_app
-  password: !QAw32
+  username: ryanmoore
+  password: 1qazSE$
   host: localhost
 
 test:
   adapter: postgresql
   encoding: utf8
   database: stec_test
-  username: stec_app
-  password: !QAw32
+  username: ryanmoore
+  password: 1qazSE$
   host: localhost
 
 production:

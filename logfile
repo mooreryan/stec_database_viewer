@@ -1,0 +1,136 @@
+LOG:  database system was shut down at 2013-06-15 16:36:49 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  cannot drop table public.carcass because other objects depend on it
+DETAIL:  constraint hide_carcass_sample_carcass_plant_id_fkey on table public.hide_carcass_sample depends on table public.carcass
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  drop table "public"."carcass"
+ERROR:  cannot drop table public.person because other objects depend on it
+DETAIL:  constraint crew_person_id_fkey on table public.crew depends on table public.person
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  drop table "public"."person"
+ERROR:  cannot drop table public.person because other objects depend on it
+DETAIL:  constraint crew_person_id_fkey on table public.crew depends on table public.person
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  drop table "public"."person"
+ERROR:  cannot drop table carcass because other objects depend on it
+DETAIL:  constraint hide_carcass_sample_carcass_plant_id_fkey on table hide_carcass_sample depends on table carcass
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  drop table "public"."carcass"
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  database "stec_development" does not exist
+FATAL:  database "stec_development" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+ERROR:  relation "fecal_sample" does not exist at character 15
+STATEMENT:  select * from fecal_sample limit 1;
+ERROR:  relation "stec_production.fecal_sample" does not exist at character 15
+STATEMENT:  select * from stec_production.fecal_sample limit 1;
+ERROR:  cannot drop schema public because other objects depend on it
+DETAIL:  sequence person_id_seq depends on schema public
+	table schema_migrations depends on schema public
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  drop schema "public"
+ERROR:  cannot drop schema public because other objects depend on it
+DETAIL:  sequence person_id_seq depends on schema public
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  drop schema "public"
+FATAL:  database "stec_development" does not exist
+ERROR:  no schema has been selected to create in
+STATEMENT:  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+ERROR:  database "stec" is being accessed by other users
+DETAIL:  There are 2 other sessions using the database.
+STATEMENT:  ALTER DATABASE "stec" RENAME TO "stec_development";
+	
+FATAL:  terminating connection due to administrator command
+LOG:  autovacuum launcher shutting down
+LOG:  autovacuum launcher started
+FATAL:  terminating connection due to administrator command
+LOG:  autovacuum launcher shutting down
+LOG:  autovacuum launcher started
+FATAL:  terminating connection due to administrator command
+LOG:  checkpointer process (PID 37350) was terminated by signal 9: Killed
+LOG:  terminating any other active server processes
+WARNING:  terminating connection because of crash of another server process
+DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+LOG:  all server processes terminated; reinitializing
+LOG:  database system was interrupted; last known up at 2013-06-15 17:13:37 EDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/19D6540
+LOG:  redo is not required
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  background writer process (PID 37808) was terminated by signal 9: Killed
+LOG:  terminating any other active server processes
+WARNING:  terminating connection because of crash of another server process
+DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+LOG:  all server processes terminated; reinitializing
+LOG:  database system was interrupted; last known up at 2013-06-15 17:21:46 EDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/19D65A0
+LOG:  redo is not required
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  WAL writer process (PID 37815) was terminated by signal 9: Killed
+LOG:  terminating any other active server processes
+WARNING:  terminating connection because of crash of another server process
+DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+LOG:  all server processes terminated; reinitializing
+LOG:  database system was interrupted; last known up at 2013-06-15 17:21:49 EDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/19D6600
+LOG:  redo is not required
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  checkpointer process (PID 37819) was terminated by signal 9: Killed
+LOG:  terminating any other active server processes
+WARNING:  terminating connection because of crash of another server process
+DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+LOG:  all server processes terminated; reinitializing
+LOG:  database system was interrupted; last known up at 2013-06-15 17:21:54 EDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/19D6660
+LOG:  redo is not required
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+ERROR:  cannot drop schema stec_development because other objects depend on it
+DETAIL:  table stec_development.carcass depends on schema stec_development
+	table stec_development.crew depends on schema stec_development
+	table stec_development.fecal_sample depends on schema stec_development
+	table stec_development.hide_carcass_sample depends on schema stec_development
+	table stec_development.person depends on schema stec_development
+	table stec_development.sample depends on schema stec_development
+	table stec_development.sampling_info depends on schema stec_development
+	table stec_development.schema_migrations depends on schema stec_development
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  drop schema "stec_development"
+ERROR:  permission denied for relation schema_migrations
+STATEMENT:  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+ERROR:  database "stec_test" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "stec_test"
+ERROR:  syntax error at or near "pg_stat_activity" at character 1
+STATEMENT:  pg_stat_activity;
+ERROR:  database "stec_test" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "stec_test"
+FATAL:  database "stec_test" does not exist
+ERROR:  permission denied to create database
+STATEMENT:  CREATE DATABASE "stec_test" ENCODING = 'utf8'
+FATAL:  database "stec_test" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  database "stec_test" does not exist
