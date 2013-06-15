@@ -1,23 +1,27 @@
-devolopment:
-  adapter: mysql2
+development:
+  adapter: postgresql
+  encoding: utf8
   database: stec_development
   username: stec_app
-  password: Ro94j#4f
-  host: virome.dbi.udel.edu
+  password: !QAw32
+  host: localhost
 
 test:
-  adapter: mysql2
-  database: stec_development
+  adapter: postgresql
+  encoding: utf8
+  database: stec_test
   username: stec_app
-  password: Ro94j#4f
-  host: virome.dbi.udel.edu
+  password: !QAw32
+  host: localhost
 
 production:
-  adapter: mysql2
-  database: stec_development
+  adapter: postgresql
+  encoding: utf8
+  database: stec_production
   username: stec_app
-  password: Ro94j#4f
-  host: virome.dbi.udel.edu
+  password: !QAw32
+  host: localhost
+
 
 # SQLite version 3.x
 #   gem install sqlite3
@@ -29,7 +33,7 @@ production:
 #  database: db/development.sqlite3
 #  pool: 5
 #  timeout: 5000
-
+#
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -38,10 +42,9 @@ production:
 #  database: db/test.sqlite3
 #  pool: 5
 #  timeout: 5000
-
+#
 #production:
 #  adapter: sqlite3
 #  database: db/production.sqlite3
 #  pool: 5
 #  timeout: 5000
-

@@ -22,15 +22,14 @@ group :test do
 end
 
 # for PostgreSQL
-# group :production do
-#   gem 'pg', '0.12.2'
-# end
+gem 'pg'
+
 
 # for MySQL at any all stages
-group :mysql do
-  gem 'mysql2'
-  gem 'activerecord-mysql-adapter'
-end
+#group :mysql do
+#  gem 'mysql2'
+#  gem 'activerecord-mysql-adapter'
+#end
 
 ############################################################
 ############################################################
