@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "path_to_sequence"
   end
 
-  create_table "sampling_info", :id => false, :force => true do |t|
+  create_table "sampling_infos", :id => false, :force => true do |t|
     t.date    "sample_date",                :null => false
     t.string  "pen_id",       :limit => 8,  :null => false
     t.integer "head_per_pen", :limit => 2
