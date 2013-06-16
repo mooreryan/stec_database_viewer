@@ -13,47 +13,42 @@
 
 ActiveRecord::Schema.define(:version => 0) do
 
-  create_table "carcass", :id => false, :force => true do |t|
+  create_table "carcasses", :id => false, :force => true do |t|
     t.string "carcass_plant_id", :limit => 8, :null => false
     t.string "hide_lab_id",      :limit => 8, :null => false
     t.string "carcass_lab_id",   :limit => 8, :null => false
   end
 
-  create_table "crew", :id => false, :force => true do |t|
+  create_table "crews", :id => false, :force => true do |t|
     t.integer "crew_id",   :limit => 2, :null => false
     t.integer "person_id", :limit => 2, :null => false
   end
 
-  create_table "fecal_sample", :id => false, :force => true do |t|
+  create_table "fecal_samples", :id => false, :force => true do |t|
     t.date   "sample_date",              :null => false
     t.string "pen_id",      :limit => 8, :null => false
     t.string "fecal_id",    :limit => 8, :null => false
   end
 
-  create_table "foo", :id => false, :force => true do |t|
-    t.integer "bar"
-    t.integer "baz"
-  end
-
-  create_table "hide_carcass_sample", :id => false, :force => true do |t|
+  create_table "hide_carcass_samples", :id => false, :force => true do |t|
     t.date   "sample_date",                   :null => false
     t.string "lot_id",           :limit => 8
     t.string "carcass_plant_id", :limit => 8, :null => false
     t.string "pen_id",           :limit => 8, :null => false
   end
 
-  create_table "person", :id => false, :force => true do |t|
+  create_table "people", :id => false, :force => true do |t|
     t.integer "person_id", :limit => 2,  :null => false
     t.string  "name",      :limit => 25, :null => false
   end
 
-  create_table "sample", :id => false, :force => true do |t|
-    t.string  "sample_id",         :limit => 8,                               :null => false
-    t.string  "sample_type",       :limit => 25,                              :null => false
-    t.integer "cryobox_num",       :limit => 2,                               :null => false
-    t.integer "cryobox_location",  :limit => 2,                               :null => false
+  create_table "samples", :id => false, :force => true do |t|
+    t.string  "sample_id",         :limit => 8,  :null => false
+    t.string  "sample_type",       :limit => 25, :null => false
+    t.integer "cryobox_num",       :limit => 2,  :null => false
+    t.integer "cryobox_location",  :limit => 2,  :null => false
     t.string  "barcode_id",        :limit => 20
-    t.string  "processing_status", :limit => 25, :default => "Not-processed", :null => false
+    t.string  "processing_status", :limit => 25, :null => false
     t.string  "serotype",          :limit => 10
     t.string  "path_to_sequence"
   end
