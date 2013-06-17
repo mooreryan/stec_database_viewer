@@ -7,7 +7,7 @@
 #  cryobox_num       :integer          not null
 #  cryobox_location  :integer          not null
 #  barcode_id        :string(20)
-#  processing_status :string(25)       not null
+#  processing_status :string(25)       default("Not-processed"), not null
 #  serotype          :string(10)
 #  path_to_sequence  :string(255)
 #

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130617204328) do
 
   create_table "carcasses", :id => false, :force => true do |t|
     t.string "carcass_plant_id", :limit => 8, :null => false
@@ -43,12 +43,12 @@ ActiveRecord::Schema.define(:version => 0) do
   end
 
   create_table "samples", :id => false, :force => true do |t|
-    t.string  "sample_id",         :limit => 8,  :null => false
-    t.string  "sample_type",       :limit => 25, :null => false
-    t.integer "cryobox_num",       :limit => 2,  :null => false
-    t.integer "cryobox_location",  :limit => 2,  :null => false
+    t.string  "sample_id",         :limit => 8,                               :null => false
+    t.string  "sample_type",       :limit => 25,                              :null => false
+    t.integer "cryobox_num",       :limit => 2,                               :null => false
+    t.integer "cryobox_location",  :limit => 2,                               :null => false
     t.string  "barcode_id",        :limit => 20
-    t.string  "processing_status", :limit => 25, :null => false
+    t.string  "processing_status", :limit => 25, :default => "Not-processed", :null => false
     t.string  "serotype",          :limit => 10
     t.string  "path_to_sequence"
   end
@@ -63,5 +63,15 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "carcass_n",    :limit => 20
     t.string  "feces_n",      :limit => 20
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end
