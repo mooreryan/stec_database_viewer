@@ -4,24 +4,24 @@
 <div id="table-container" class="table-container">
   <table class="scroll-table">
     <thead class="fixed-header">
-      <tr class="alternate-row">
-	<th>Header 1</th>
-	<th>Header 2</th>
+      <tr class="header-row">
+	<th>ID</th>
+	<th>Type</th>
+	<th>Cryobox Num</th>
+	<th>Cryobox Loc</th>
+	<th>Status</th>
       </tr>
     </thead>
     <tbody class="scroll-content">
-      <tr class="normal-row">
-	<td>content</td>
-	<td>content</td>
-      </tr>
-      <tr class="alternate-row">
-	<td>content</td>
-	<td>content</td>
-      </tr>
-      <tr class="normal-row">
-	<td>content</td>
-	<td>content</td>
-      </tr>
+      <% Sample.all.each do |sample| %>
+	<tr>
+	  <td><%= sample.sample_id %></td>
+	  <td><%= sample.sample_type %></td>
+	  <td><%= sample.cryobox_num %></td>
+	  <td><%= sample.cryobox_location %></td>
+	  <td><%= sample.processing_status %></td>
+	</tr>
+	<% end %>
     </tbody>
   </table>
 </div>

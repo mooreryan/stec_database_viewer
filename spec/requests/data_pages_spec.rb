@@ -25,7 +25,8 @@ describe "DataPages" do
 
     it "should list all fecal samples" do
       Sample.all.each do |sample|
-        page.should have_selector 'li', text: sample.sample_id
+        # not sure how to test for all five things...
+        page.should have_selector 'td', text: sample.sample_id
       end
     end
   end

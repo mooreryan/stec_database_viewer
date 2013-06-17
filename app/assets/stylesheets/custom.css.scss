@@ -5,6 +5,13 @@ body {
   padding: 0;
 }
 
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
 div#header-container {
   width: 100%;
   height: 3em;
@@ -50,6 +57,10 @@ div#cow-pic {
   margin-left: auto;
   margin-right: auto;
   background-color: mintcream;
+}
+
+.footer, .push {
+  height: 4em;
 }
 
 footer p { 

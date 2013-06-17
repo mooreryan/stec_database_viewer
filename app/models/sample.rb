@@ -13,5 +13,5 @@
 #
 
 class Sample < ActiveRecord::Base
-  
+  attr_accessible :sample_id, :sample_type, :cryobox_num, :cryobox_location
 end
