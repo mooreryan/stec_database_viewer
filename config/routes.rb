@@ -1,5 +1,5 @@
 Stec::Application.routes.draw do
-  get "users/new"
+  resources :users
 
   root to: 'static_pages#home'
 
@@ -8,9 +8,17 @@ Stec::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/help',    to: 'static_pages#help'
 
-  match '/view', to: 'data_pages#view'
   match '/add',  to: 'data_pages#add'
   match '/edit', to: 'data_pages#edit'
+
+  match '/view', to: 'data_pages#view'
+  match '/view/samples', to: 'data_pages#samples'
+  match '/view/sampling_info', to: 'data_pages#sampling_info'
+  match '/view/fecal_samples', to: 'data_pages#fecal_samples'
+  match '/view/hide_samples', to: 'data_pages#hide_samples'
+  match '/view/people', to: 'data_pages#people'
+
+  match '/signup', to: 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

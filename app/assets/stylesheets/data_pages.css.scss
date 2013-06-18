@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+ul.data-view-nav {
+  list-style-type: none;
+  
+  #first { font-size: 1.25em; }
+
+  a {
+    text-decoration: none;
+    color: #7F3D17;
+  }
+}
+
 div.table-container {
   clear: both; // ?
   width: 100%;

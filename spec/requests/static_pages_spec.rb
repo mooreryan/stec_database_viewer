@@ -43,24 +43,19 @@ describe "StaticPages" do
   it "should have the right links on the layout" do
     visit root_path
 
+    # Main navigation links
     click_link "Home"
     page.should have_selector 'title', text: full_title('Home')
-
     click_link "About"
     page.should have_selector 'title', text: full_title('About')
-
     click_link "View"
     page.should have_selector 'title', text: full_title('View')
-
     click_link "Add"
     page.should have_selector 'title', text: full_title('Add')
-
     click_link "Edit"
     page.should have_selector 'title', text: full_title('Edit')
-
     click_link "Contact"
     page.should have_selector 'title', text: full_title('Contact')
-
     click_link "Help"
     page.should have_selector 'title', text: full_title('Help')
   end
