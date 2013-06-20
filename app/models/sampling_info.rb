@@ -13,4 +13,5 @@
 #
 
 class SamplingInfo < ActiveRecord::Base
+  attr_accessible :sample_date, :pen_id, :head_per_pen, :crew_id, :observations
 end

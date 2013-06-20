@@ -2,3 +2,26 @@
 <h2>Wommack Lab Sample Info</h2>
 
 <%= render 'layouts/sample_nav_bar' %>
+
+<div id="table-container" class="table-container">
+  <table class="scroll-table">
+    <thead class="fixed-header">
+      <tr class="header-row">
+	<th>ID</th>
+	<th>Type</th>
+	<th>Cryo Num</th>
+	<th>Cryo Loc</th>
+      </tr>
+    </thead>
+    <tbody class="scroll-content">
+      <% Sample.all.each do |sample| %>
+	<tr>
+	  <td><%= sample.sample_id %></td>
+	  <td><%= sample.sample_type  %></td>
+	  <td><%= sample.cryobox_num %></td>
+	  <td><%= sample.cryobox_location %></td>
+	</tr>
+	<% end %>
+    </tbody>
+  </table>
+</div>

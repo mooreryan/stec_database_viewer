@@ -1,0 +1,19 @@
+<% content_for :head do %>
+  <th>ID</th>
+  <th>Type</th>
+  <th>Cryobox Num</th>
+  <th>Cryobox Loc</th>
+  <th>Status</th>
+<% end %>
+
+<% Sample.all.each do |sample| %>
+  <tr>
+    <td><%= sample.sample_id %></td>
+    <td><%= sample.sample_type %></td>
+    <td><%= sample.cryobox_num %></td>
+    <td><%= sample.cryobox_location %></td>
+    <td><%= sample.processing_status %></td>
+  </tr>
+<% end %> 
+
+

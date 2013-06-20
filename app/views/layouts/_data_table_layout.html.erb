@@ -1,0 +1,12 @@
+<div id="table-container" class="table-container">
+  <table class="scroll-table">
+    <thead class="fixed-header">
+      <tr class="header-row">
+	<%= yield :head %>
+      </tr>
+    </thead>
+    <tbody class="scroll-content">
+      <%= yield %>
+    </tbody>
+  </table>
+</div>

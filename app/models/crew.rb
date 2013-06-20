@@ -7,4 +7,6 @@
 #
 
 class Crew < ActiveRecord::Base
+  attr_accessible :crew_id, :person_id
+
 end
