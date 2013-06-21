@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130617204328) do
 
-  create_table "carcasses", :id => false, :force => true do |t|
-    t.string "carcass_plant_id", :limit => 8, :null => false
-    t.string "hide_lab_id",      :limit => 8, :null => false
-    t.string "carcass_lab_id",   :limit => 8, :null => false
-  end
-
   create_table "crews", :id => false, :force => true do |t|
     t.integer "crew_id",   :limit => 2, :null => false
     t.integer "person_id", :limit => 2, :null => false
@@ -32,8 +26,10 @@ ActiveRecord::Schema.define(:version => 20130617204328) do
 
   create_table "hide_carcass_samples", :id => false, :force => true do |t|
     t.date   "sample_date",                   :null => false
-    t.string "lot_id",           :limit => 8
+    t.string "lot_id",           :limit => 8, :null => false
     t.string "carcass_plant_id", :limit => 8, :null => false
+    t.string "hide_id",          :limit => 8, :null => false
+    t.string "carcass_id",       :limit => 8, :null => false
     t.string "pen_id",           :limit => 8, :null => false
   end
 

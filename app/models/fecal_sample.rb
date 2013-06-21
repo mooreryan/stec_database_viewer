@@ -10,4 +10,5 @@
 # note that all attributes are accessible by default
 # unless you specify the ones you want to be accessible
 class FecalSample < ActiveRecord::Base
+  attr_accessible :sample_date, :pen_id, :fecal_id
 end

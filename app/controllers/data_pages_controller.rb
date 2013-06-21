@@ -8,7 +8,10 @@ class DataPagesController < ApplicationController
   def edit
   end
 
-  def samples
+  def samples # tested in data_pages_spec.rb
+    @fecal = Sample.select('*').joins('inner join fecal_samples on samples.sample_id = fecal_samples.fecal_id')
+    @hide = Sample.select('*').joins('inner join hide_carcass_samples on samples.sample_id = hide_carcass_samples.hide_id')
+    @carcass = Sample.select('*').joins('inner join hide_carcass_samples on samples.sample_id = hide_carcass_samples.carcass_id')
   end
 
   def sampling_info
