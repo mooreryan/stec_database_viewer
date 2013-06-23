@@ -1,0 +1,28 @@
+<table class="scroll-table">
+  <thead class="fixed-header">
+    <tr class="header-row">
+      <th>ID</th>
+      <th>Type</th>
+      <th>Cryo Num</th>
+      <th>Cryo Loc</th>
+      <th>Date</th>
+      <th>Pen</th>
+      <th>Serotype?</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody class="scroll-content" id="scroll-content">
+    <% @filtered_all.each do |record| %>
+      <tr>
+	<td><%= record.sample_id %></td>
+	<td><%= record.sample_type  %></td>
+	<td><%= record.cryobox_num %></td>
+	<td><%= record.cryobox_location %></td>
+	<td><%= record.sample_date %></td>
+	<td><%= record.pen_id %></td>
+	<td><%= record.serotype %></td>
+	<td><%= record.processing_status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

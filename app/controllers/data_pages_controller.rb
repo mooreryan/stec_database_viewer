@@ -16,6 +16,8 @@ class DataPagesController < ApplicationController
     @filtered_fecal   = @fecal.search(params[:search])
     @filtered_hide    = @hide.search(params[:search])
     @filtered_carcass = @carcass.search(params[:search])
+
+    @filtered_all = @filtered_fecal + @filtered_hide + @filtered_carcass
   end
 
   def sampling_info
