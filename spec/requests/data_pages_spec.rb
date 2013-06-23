@@ -35,9 +35,9 @@ describe "DataPages" do
 
   describe "Samples page" do
     before do
-      Sample.create(sample_id: "1F", sample_type: "Fecal", cryobox_num: 1, cryobox_location: 1)
-      Sample.create(sample_id: "1H", sample_type: "Hide", cryobox_num: 1, cryobox_location: 2)
-      Sample.create(sample_id: "1C", sample_type: "Carcass", cryobox_num: 1, cryobox_location: 3)
+      Sample.create(sample_id: "1F", sample_type: "Fecal", cryobox_num: 1, cryobox_location: 1, processing_status: 'Not-processed')
+      Sample.create(sample_id: "1H", sample_type: "Hide", cryobox_num: 1, cryobox_location: 2, processing_status: 'Not-processed')
+      Sample.create(sample_id: "1C", sample_type: "Carcass", cryobox_num: 1, cryobox_location: 3, processing_status: 'Processed')
       
       HideCarcassSample.create(sample_date: "2001-01-15", lot_id: "111", carcass_plant_id: "33",
                                hide_id: "1H", carcass_id: "1C", pen_id: "D222")
@@ -89,14 +89,41 @@ describe "DataPages" do
       end
     end
 
-    it { should have_selector 'form p', text: "Sample" }
+    # will also search by sample_type, cryobox_num, cryobox_location, serotype
 
-    
-    it "should seach by fecal_id" do
-      click_button "Filter" # this does check if there is a filter button
-      expect { all('table tr').count.should == 10 } # this doesnt actually test what i want it to
+    it "should seach by sample_id" do
+      fill_in "search", with: "1f"
+      click_button "Search"
+      expect(page).to have_selector 'table tbody tr', count: 1
+
+      fill_in 'search', with: '1Q'
+      click_button 'Search'
+      expect(page).to have_no_selector 'table tbody tr'
     end
 
+    it "should seach by pen_id" do
+      fill_in "search", with: "D222"
+      click_button "Search"
+      expect(page).to have_selector 'table tbody tr', count: 3
+
+      fill_in "search", with: "222"
+      click_button "Search"
+      expect(page).to have_selector 'table tbody tr', count: 3
+
+      fill_in "search", with: "X3894"
+      click_button "Search"
+      expect(page).to have_no_selector 'table tbody tr'
+    end
+
+    it "should search by processing_status" do
+      fill_in "search", with: "not-processed"
+      click_button "Search"
+      expect(page).to have_selector 'table tbody tr', count: 2
+
+      fill_in "search", with: "processed"
+      click_button "Search"
+      expect(page).to have_selector 'table tbody tr', count: 1
+    end
   end
 
   describe "Sampling info page" do

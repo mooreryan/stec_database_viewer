@@ -13,5 +13,46 @@
 #
 
 class Sample < ActiveRecord::Base
-  attr_accessible :sample_id, :sample_type, :cryobox_num, :cryobox_location
+  attr_accessible :sample_id, :sample_type, :cryobox_num, :cryobox_location, :processing_status
+
+  def self.search(search)
+    # this search method is a bit off...
+    if !search.nil? && !search.match(/^\d+$/)
+      search_condition = 
+        'sample_id ilike ? or ' +
+        'sample_type ilike ? or ' +
+        'processing_status ilike ? or ' +
+        'serotype ilike ? or ' + 
+        'pen_id ilike ?'
+
+      find(:all, :conditions => 
+           [search_condition,
+            "%#{search}%",
+            "%#{search}%",
+            "#{search}%",
+            "%#{search}%",
+            "%#{search}%"])
+    elsif search
+      search_condition = 
+        'sample_id ilike ? or ' +
+        'sample_type ilike ? or ' +
+        'cryobox_num = ? or ' +
+        'cryobox_location = ? or ' +
+        'processing_status ilike ? or ' +
+        'serotype ilike ? or ' +
+        'pen_id ilike ?'
+
+      find(:all, :conditions => 
+           [search_condition,
+            "%#{search}%",
+            "%#{search}%",
+            "#{search}",
+            "#{search}",
+            "#{search}%",
+            "%#{search}%",
+            "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 end

@@ -3,15 +3,23 @@
 
 <%= render 'layouts/sample_nav_bar' %>
 
+<%= form_tag view_samples_path, method: 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
+<!--
 <form action="">
   <p>Sample:
     <input type="text" name="username" size="5" 
 	   placeholder="eg. 14H"/>
     <input type="submit" name="Filter" value="Filter" 
-	   onClick="alert( 'Hello World!' );" />
+	   id="filter-button" onClick="alert( 'Hello World!' );" />
   </p>
-</form
-
+</form>
+-->
 <div id="table-container" class="table-container">
   <table class="scroll-table">
     <thead class="fixed-header">
@@ -27,7 +35,7 @@
       </tr>
     </thead>
     <tbody class="scroll-content">
-      <% @fecal.each do |record| %>
+      <% @filtered_fecal.each do |record| %>
 	<tr>
 	  <td><%= record.sample_id %></td>
 	  <td><%= record.sample_type  %></td>
@@ -40,7 +48,7 @@
 	</tr>
       <% end %>
       
-      <% @hide.each do |record| %>
+      <% @filtered_hide.each do |record| %>
 	<tr>
 	  <td><%= record.sample_id %></td>
 	  <td><%= record.sample_type  %></td>
@@ -53,7 +61,7 @@
 	</tr>
       <% end %>
       
-      <% @carcass.each do |record| %>
+      <% @filtered_carcass.each do |record| %>
 	<tr>
 	  <td><%= record.sample_id %></td>
 	  <td><%= record.sample_type  %></td>

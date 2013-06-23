@@ -12,6 +12,10 @@ class DataPagesController < ApplicationController
     @fecal = Sample.select('*').joins('inner join fecal_samples on samples.sample_id = fecal_samples.fecal_id')
     @hide = Sample.select('*').joins('inner join hide_carcass_samples on samples.sample_id = hide_carcass_samples.hide_id')
     @carcass = Sample.select('*').joins('inner join hide_carcass_samples on samples.sample_id = hide_carcass_samples.carcass_id')
+
+    @filtered_fecal   = @fecal.search(params[:search])
+    @filtered_hide    = @hide.search(params[:search])
+    @filtered_carcass = @carcass.search(params[:search])
   end
 
   def sampling_info
