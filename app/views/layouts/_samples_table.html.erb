@@ -1,4 +1,12 @@
-<table class="scroll-table sortable">
+<script>
+  $(document).ready(function() 
+  { 
+  $("#samples-table").tablesorter({sortList: [[4,0]]}); 
+  } 
+  ); 
+</script>
+
+<table class="scroll-table tablesorter" id="samples-table">
   <thead class="fixed-header">
     <tr class="header-row">
       <th>ID</th>

@@ -1,3 +1,40 @@
 LOG:  database system was shut down at 2013-06-23 18:49:05 EDT
 LOG:  autovacuum launcher started
 LOG:  database system is ready to accept connections
+ERROR:  operator does not exist: date ~~ unknown at character 47
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+STATEMENT:  select * from fecal_samples where sample_date like '6-09'
+	;
+ERROR:  invalid input syntax for type date: "6-09" at character 49
+STATEMENT:  select * from fecal_samples where sample_date = '6-09';
+ERROR:  syntax error at or near ";" at character 61
+STATEMENT:  select * from fecal_samples where sample_date between '6-09';
+ERROR:  invalid input syntax for type date: "6-09" at character 55
+STATEMENT:  select * from fecal_samples where sample_date between '6-09' and '6-09';
+ERROR:  invalid value "ap" for "yy"
+DETAIL:  Value must be an integer.
+STATEMENT:  select * from fecal_samples where sample_date = to_date('apple', 'yy-mm-dd');
+ERROR:  invalid value "--" for "yy"
+DETAIL:  Value must be an integer.
+STATEMENT:  select * from fecal_samples where sample_date = to_date('----9-3-4--5', 'yy-mm-dd');
+ERROR:  invalid value "--" for "mm"
+DETAIL:  Value must be an integer.
+STATEMENT:  select * from fecal_samples where sample_date = to_date('9-----3-4--5', 'yy-mm-dd');
+ERROR:  syntax error at or near "13.06" at character 127
+STATEMENT:  SELECT * FROM "samples" inner join fecal_samples on samples.sample_id = fecal_samples.fecal_id WHERE (sample_date = to_date(''13.06.09'', 'yyyy-mm-dd') or sample_date = to_date(''13.06.09'', 'yy-mm-dd') or sample_date = to_date(''13.06.09'', 'yyyy-dd-mm') or sample_date = to_date(''13.06.09'', 'yy-dd-mm') or sample_date = to_date(''13.06.09'', 'mm-dd-yyyy') or sample_date = to_date(''13.06.09'', 'mm-dd-yy') or sample_date = to_date(''13.06.09'', 'dd-mm-yyyy') or sample_date = to_date(''13.06.09'', 'dd-mm-yy'))
+ERROR:  syntax error at or near "13.06" at character 127
+STATEMENT:  SELECT * FROM "samples" inner join fecal_samples on samples.sample_id = fecal_samples.fecal_id WHERE (sample_date = to_date(''13.06.09'', 'yyyy-mm-dd') or sample_date = to_date(''13.06.09'', 'yy-mm-dd') or sample_date = to_date(''13.06.09'', 'yyyy-dd-mm') or sample_date = to_date(''13.06.09'', 'yy-dd-mm') or sample_date = to_date(''13.06.09'', 'mm-dd-yyyy') or sample_date = to_date(''13.06.09'', 'mm-dd-yy') or sample_date = to_date(''13.06.09'', 'dd-mm-yyyy') or sample_date = to_date(''13.06.09'', 'dd-mm-yy'))
+ERROR:  syntax error at or near "06" at character 127
+STATEMENT:  SELECT * FROM "samples" inner join fecal_samples on samples.sample_id = fecal_samples.fecal_id WHERE (sample_date = to_date(''06-09-13'', 'yyyy-mm-dd') or sample_date = to_date(''06-09-13'', 'yy-mm-dd') or sample_date = to_date(''06-09-13'', 'yyyy-dd-mm') or sample_date = to_date(''06-09-13'', 'yy-dd-mm') or sample_date = to_date(''06-09-13'', 'mm-dd-yyyy') or sample_date = to_date(''06-09-13'', 'mm-dd-yy') or sample_date = to_date(''06-09-13'', 'dd-mm-yyyy') or sample_date = to_date(''06-09-13'', 'dd-mm-yy'))
+ERROR:  syntax error at or near "06" at character 127
+STATEMENT:  SELECT * FROM "samples" inner join fecal_samples on samples.sample_id = fecal_samples.fecal_id WHERE (sample_date = to_date(''06-09-13'', 'yyyy-mm-dd') or sample_date = to_date(''06-09-13'', 'yy-mm-dd') or sample_date = to_date(''06-09-13'', 'yyyy-dd-mm') or sample_date = to_date(''06-09-13'', 'yy-dd-mm') or sample_date = to_date(''06-09-13'', 'mm-dd-yyyy') or sample_date = to_date(''06-09-13'', 'mm-dd-yy') or sample_date = to_date(''06-09-13'', 'dd-mm-yyyy') or sample_date = to_date(''06-09-13'', 'dd-mm-yy'))
+ERROR:  syntax error at or near "13" at character 127
+STATEMENT:  SELECT * FROM "samples" inner join fecal_samples on samples.sample_id = fecal_samples.fecal_id WHERE (sample_date = to_date(''13-06-09'', 'yyyy-mm-dd') or sample_date = to_date(''13-06-09'', 'yy-mm-dd') or sample_date = to_date(''13-06-09'', 'yyyy-dd-mm') or sample_date = to_date(''13-06-09'', 'yy-dd-mm') or sample_date = to_date(''13-06-09'', 'mm-dd-yyyy') or sample_date = to_date(''13-06-09'', 'mm-dd-yy') or sample_date = to_date(''13-06-09'', 'dd-mm-yyyy') or sample_date = to_date(''13-06-09'', 'dd-mm-yy'))
+ERROR:  syntax error at or near "13" at character 127
+STATEMENT:  SELECT * FROM "samples" inner join fecal_samples on samples.sample_id = fecal_samples.fecal_id WHERE (sample_date = to_date(''13-06-09'', 'yyyy-mm-dd') or sample_date = to_date(''13-06-09'', 'yy-mm-dd') or sample_date = to_date(''13-06-09'', 'yyyy-dd-mm') or sample_date = to_date(''13-06-09'', 'yy-dd-mm') or sample_date = to_date(''13-06-09'', 'mm-dd-yyyy') or sample_date = to_date(''13-06-09'', 'mm-dd-yy') or sample_date = to_date(''13-06-09'', 'dd-mm-yyyy') or sample_date = to_date(''13-06-09'', 'dd-mm-yy'))
+ERROR:  syntax error at or near "06" at character 127
+STATEMENT:  SELECT * FROM "samples" inner join fecal_samples on samples.sample_id = fecal_samples.fecal_id WHERE (sample_date = to_date(''06-09-13'', 'yyyy-mm-dd') or sample_date = to_date(''06-09-13'', 'yy-mm-dd') or sample_date = to_date(''06-09-13'', 'yyyy-dd-mm') or sample_date = to_date(''06-09-13'', 'yy-dd-mm') or sample_date = to_date(''06-09-13'', 'mm-dd-yyyy') or sample_date = to_date(''06-09-13'', 'mm-dd-yy') or sample_date = to_date(''06-09-13'', 'dd-mm-yyyy') or sample_date = to_date(''06-09-13'', 'dd-mm-yy'))
+ERROR:  syntax error at or near "06" at character 127
+STATEMENT:  SELECT * FROM "samples" inner join fecal_samples on samples.sample_id = fecal_samples.fecal_id WHERE (sample_date = to_date(''06-09-13'', 'yyyy-mm-dd') or sample_date = to_date(''06-09-13'', 'yy-mm-dd') or sample_date = to_date(''06-09-13'', 'yyyy-dd-mm') or sample_date = to_date(''06-09-13'', 'yy-dd-mm') or sample_date = to_date(''06-09-13'', 'mm-dd-yyyy') or sample_date = to_date(''06-09-13'', 'mm-dd-yy') or sample_date = to_date(''06-09-13'', 'dd-mm-yyyy') or sample_date = to_date(''06-09-13'', 'dd-mm-yy'))
+ERROR:  syntax error at or near "06" at character 127
+STATEMENT:  SELECT * FROM "samples" inner join fecal_samples on samples.sample_id = fecal_samples.fecal_id WHERE (sample_date = to_date(''06-09-2013'', 'yyyy-mm-dd') or sample_date = to_date(''06-09-2013'', 'yy-mm-dd') or sample_date = to_date(''06-09-2013'', 'yyyy-dd-mm') or sample_date = to_date(''06-09-2013'', 'yy-dd-mm') or sample_date = to_date(''06-09-2013'', 'mm-dd-yyyy') or sample_date = to_date(''06-09-2013'', 'mm-dd-yy') or sample_date = to_date(''06-09-2013'', 'dd-mm-yyyy') or sample_date = to_date(''06-09-2013'', 'dd-mm-yy'))

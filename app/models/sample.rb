@@ -17,7 +17,32 @@ class Sample < ActiveRecord::Base
 
   def self.search(search)
     # this search method is a bit off...
-    if !search.nil? && !search.match(/^\d+$/)
+  
+    if !search.nil? && (search.match(/^\d\d\d\d[-\/\.]\d\d[-\/\.]\d\d$/) ||
+                        search.match(/^\d\d[-\/\.]\d\d[-\/\.]\d\d$/) ||
+                        search.match(/^\d\d[-\/\.]\d\d[-\/\.]\d\d\d\d$/))
+      search_condition = 
+        "sample_date = to_date(?, 'yyyy-mm-dd') or " +
+        "sample_date = to_date(?, 'yy-mm-dd') or " +
+        "sample_date = to_date(?, 'yyyy-dd-mm') or " +
+        "sample_date = to_date(?, 'yy-dd-mm') or " +
+        "sample_date = to_date(?, 'mm-dd-yyyy') or " +
+        "sample_date = to_date(?, 'mm-dd-yy') or " +
+        "sample_date = to_date(?, 'dd-mm-yyyy') or " +
+        "sample_date = to_date(?, 'dd-mm-yy')"
+
+      find(:all, conditions: 
+           [search_condition,
+            "#{search}",
+            "#{search}",
+            "#{search}",
+            "#{search}",
+            "#{search}",
+            "#{search}",
+            "#{search}",
+            "#{search}"])
+            
+    elsif !search.nil? && !search.match(/^\d+$/)
       search_condition = 
         'sample_id ilike ? or ' +
         'sample_type ilike ? or ' +
