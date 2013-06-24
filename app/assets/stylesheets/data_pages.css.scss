@@ -15,8 +15,8 @@ ul.data-view-nav {
 
 div.table-container {
   clear: both; // ?
-  width: 100%;
-  width: 800px; // add 16px for the scrollbar
+  //width: 100%;
+  //width: 800px; // add 16px for the scrollbar
   height: 618px;
   overflow: hidden;
   margin-left: auto;
@@ -25,7 +25,7 @@ div.table-container {
 
   table.scroll-table {
     float: left;
-    width: 800px;
+    //width: 800px;
     height: 618px;
 //    overflow: scroll;
 //    background-color: blue;
@@ -34,10 +34,13 @@ div.table-container {
       //position: fixed;
       //height: 100px;
       //text-align: center; // horizontal alignment
+      
 
       tr { 
 	position: relative;
-	display: block; 
+	display: block;
+
+	color: #7F3D17;
       }
 
       th { // id
@@ -46,21 +49,34 @@ div.table-container {
 	text-align: center;
 	width: 70px;
 	//height: 35px;
+	background-color: #CBFFFA;
       }
 
       th + th { // type
-	width: 80px;
+	width: 81px;
       }
 
       th + th + th { // cryobox num
-	width: 100px;
+	width: 70px;
       }
 
       th + th + th + th { // cryobox loc
-	width: 100px;
+	width: 70px;
       }
 
-      th + th + th + th + th { // status
+      th + th + th + th + th { // date
+	width: 140px;
+      }
+
+      th + th + th + th + th + th { // Pen
+	width: 70px;
+      }
+
+      th + th + th + th + th + th + th { // serotype?
+	width: 140px;
+      }
+
+      th + th + th + th + th + th + th + th { // status
 	width: 175px;
       }
 
@@ -74,18 +90,31 @@ div.table-container {
       text-align: left;
 
       td { 
-	width: 70px;
-	border-right: 1px solid #CBFFFA;
-	border-top: 1px solid #CBFFFA;
+	width: 71px;
+	//border-right: 1px solid black;
+	//border-top: 1px solid black;
       }
 
-      td + td { width: 80px }
+      td + td { width: 81px }
 
-      td + td + td { width: 100px }
+      td + td + td { width: 73px }
 
-      td + td + td + td { width: 100px }
+      td + td + td + td { width: 72px }
 
-      td + td + td + td +td { width: 175px }
+      td + td + td + td + td { width: 143px }
+
+      td + td + td + td + td + td { width: 70px }
+
+      td + td + td + td + td + td + td { width: 144px }
+
+      td + td + td + td + td + td + td + td { width: 177px }
     }
   }
+}
+
+table.sortable tbody tr:nth-child(2n) td {
+  background: #CBFFFA;
+}
+table.sortable tbody tr:nth-child(2n+1) td {
+  background: white;
 }
