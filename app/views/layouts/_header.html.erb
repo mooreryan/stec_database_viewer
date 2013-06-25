@@ -5,11 +5,16 @@
 	<ul id="header-navigation-items">
 	  <li><%= link_to "Home", root_path %></li>
 	  <li><%= link_to "About", about_path %></li>
-	  <li><%= link_to "View", view_path %></li>
-	  <li><%= link_to "Add", add_path %></li>
-	  <li><%= link_to "Edit", edit_path %></li>
 	  <li><%= link_to "Contact", contact_path %></li>
-	  <li><%= link_to "Help", help_path %></li>
+
+	  <% if signed_in? %>
+	    <li><%= link_to "View", view_path %></li>
+	    <li><%= link_to "Help", help_path %></li>
+	    <li><%= link_to "Profile", current_user %></li>
+	    <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+	  <% else %>
+	    <li><%= link_to "Sign in", signin_path %></li>
+          <% end %>
 	</ul>
       </nav>
     </div>
