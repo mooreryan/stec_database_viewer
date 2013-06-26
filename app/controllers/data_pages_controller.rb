@@ -1,4 +1,6 @@
 class DataPagesController < ApplicationController
+  before_filter :signed_in_user
+  
   def view
   end
 
@@ -38,4 +40,15 @@ class DataPagesController < ApplicationController
 
   def people
   end
+
+  private
+  def signed_in_user
+# this unless block is the same as the line starting with redirect_to
+#    unless signed_in?
+#      flash[:notice] = "Please sign in."
+#     redirect_to signin_url
+#    end
+    redirect_to signin_url, notice: "#JoinTheMooMint" unless signed_in?
+  end
+
 end

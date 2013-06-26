@@ -42,4 +42,20 @@ describe "Authentication" do
       end
     end
   end
+
+  describe "authorization" do 
+    
+    describe "for non-signed-in users" do
+      let(:user) { User.create(name: "Cliff", email: "happy.moo@moomint.com",
+                               password: "apples", password_confirmation: "apples") }
+
+      
+      
+
+  
+
+
 end
+
+
+
