@@ -7,9 +7,20 @@ describe "UserPages" do
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
     before { visit user_path(user) }
+    
+    describe "before signin it should redirect to signin page" do
+      it { should have_selector('h1',    text: 'Sign in') }
+      it { should have_selector('title', text: full_title('Sign in')) }
+    end
 
-    it { should have_selector('h1',    text: user.name) }
-    it { should have_selector('title', text: user.name) }
+    describe "after signin, it should be accessible" do
+      before { visit signin_path }
+      before { sign_in user }
+      before { visit user_path(user) }
+
+      it { should have_selector('h1',    text: user.name) }
+      it { should have_selector('title', text: user.name) }
+    end
   end
 
   describe "signup page" do
@@ -28,6 +39,13 @@ describe "UserPages" do
     describe "with invalid information" do
       it "should not create a user" do
         expect { click_button submit }.not_to change(User, :count)
+      end
+
+      describe "after submission" do
+        before { click_button submit }
+
+        it { should have_selector('title', text: 'Sign up') }
+        it { should have_content('error') }
       end
     end
 
