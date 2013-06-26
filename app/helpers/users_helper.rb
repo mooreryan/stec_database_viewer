@@ -1,5 +1,5 @@
 module UsersHelper
-
+  # for some reason this has to be duplicated from sessions_helper.rb
   def sign_in(user)
     # technically this sets expiration to 20.years.from_now
     cookies.permanent[:remember_token] = user.remember_token
@@ -25,7 +25,7 @@ module UsersHelper
 
   def current_user?(user)
     user == current_user
-  end
+  end 
 
 
 end
