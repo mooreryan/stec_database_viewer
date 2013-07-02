@@ -4,7 +4,7 @@
 #
 #  sample_date :date             not null
 #  pen_id      :string(8)        not null
-#  fecal_id    :string(8)        not null, primary key
+#  fecal_id    :string(20)       not null, primary key
 #
 
 # note that all attributes are accessible by default

@@ -12,11 +12,7 @@
 	<th>Sample date</th>
 	<th>Pen ID</th>
 	<th># head</th>
-	<th>Crew</th>
 	<th>Oberservations</th>
-	<th>Hide</th>
-	<th>Carcass</th>
-	<th>Feces</th>
       </tr>
     </thead>
     <tbody class="scroll-content">
@@ -25,11 +21,7 @@
 	  <td><%= info.sample_date %></td>
 	  <td><%= info.pen_id  %></td>
 	  <td><%= info.head_per_pen %></td>
-	  <td id="crew"><%= @crews[info.crew_id-1] %></td>
 	  <td><%= info.observations %></td>
-	  <td><%= info.hides_n %></td>
-	  <td><%= info.carcass_n %></td>
-	  <td><%= info.feces_n %></td>
 	</tr>
 	<% end %>
     </tbody>

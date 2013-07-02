@@ -5,8 +5,8 @@
 #  sample_date      :date             not null
 #  lot_id           :string(8)        not null
 #  carcass_plant_id :string(8)        not null, primary key
-#  hide_id          :string(8)        not null
-#  carcass_id       :string(8)        not null
+#  hide_id          :string(20)       not null
+#  carcass_id       :string(20)       not null
 #  pen_id           :string(8)        not null
 #
 
